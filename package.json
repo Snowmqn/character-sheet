@@ -1,0 +1,31 @@
+{
+  "name": "character-sheet",
+  "version": "1.0.0",
+  "description": "D&D 5e Character Sheet",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Snowmqn/character-sheet.git"
+  },
+  "author": "Snowmqn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Snowmqn/character-sheet/issues"
+  },
+  "homepage": "https://github.com/Snowmqn/character-sheet#readme",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.7.1",
+    "express": "^4.14.0",
+    "express-session": "^1.14.0",
+    "mongoose": "^4.5.4",
+    "morgan": "^1.7.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
+  }
+}

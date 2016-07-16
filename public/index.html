@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="CSApp">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <title>Character Sheet</title>
+</head>
+<body ng-controller="login-controller">
+    {{test}}
+    <input type="text" placeholder="Username" ng-model="username">
+    <input type="text" placeholder="Password" ng-model="password">
+    <input type="text" placeholder="Confirm Password" ng-model="passwordConfirm">
+    <button ng-click="submitNewUser(username, password, passwordConfirm)">Submit!</button>
+    
+    
+
+
+    <script src="./scripts/app.js"></script>
+    <script src="./scripts/controllers/login-controller.js"></script>
+    <script src="./scripts/services/userSerivce.js"></script>
+</body>
+</html>
