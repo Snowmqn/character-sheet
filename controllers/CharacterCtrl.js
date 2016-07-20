@@ -1,18 +1,17 @@
-var User= require('../models/User');
+var Character = require('../models/Character');
 
 module.exports = {
     
     create: function(req, res) {
-        var newUser = new User(req.body);
-        newUser.save(function(err, result) {
+        var newCharacter = new Character(req.body);
+        newCharacter.save(function(err, result) {
             if(err) return res.status(500).send(err);
             res.send(result);
         });
     },
 
     read: function(req, res) {
-        User.find(req.query)
-        .populate('characters')
+        Character.find(req.query)
         .exec(function(err, result) {
             if(err) return res.status(500).send(err);
             res.send(result);
@@ -20,7 +19,8 @@ module.exports = {
     },
 
     update: function(req, res) {
-        User.findByIdAndUpdate(req.params.id, req.body,
+        console.log("Reached this point");
+        Character.findByIdAndUpdate(req.params.id, req.body,
         function(err, result) {
             if(err) return res.status(500).send(err);
             res.send(result);
@@ -29,7 +29,7 @@ module.exports = {
     },
 
     delete: function(req, res) {
-        User.findByIdAndRemove(req.params.id,
+        Character.findByIdAndRemove(req.params.id,
         function(err, result) {
             if(err) return res.status(500).send(err);
             res.send(result);

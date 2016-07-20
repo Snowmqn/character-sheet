@@ -49,6 +49,7 @@ module.exports = function(passport) {
 
                     // check to see if theres already a user with that email
                     if (user) {
+                        console.log('User Check!!!!!!');
                         if (user.validPassword(password)) {
                             return done(null, user);
                         } else {
@@ -60,12 +61,13 @@ module.exports = function(passport) {
                         var newUser = new User();
 
                         // set the user's local credentials
-                        newUser.username    = username;
+                        newUser.username = username;
                         newUser.password = newUser.generateHash(password);
 
                         // save the user
                         newUser.save(function(err) {
                             if (err) throw err;
+                            console.log(newUser);
                             return done(null, newUser);
                         });
                     }

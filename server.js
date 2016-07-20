@@ -36,28 +36,41 @@ var StatsSheetCtrl  = require('./controllers/StatsSheetCtrl');
 var MiscSheetCtrl   = require('./controllers/MiscSheetCtrl');
 var SpellsSheetCtrl = require('./controllers/SpellsSheetCtrl');
 var UserCtrl        = require('./controllers/UserCtrl');
+var CharacterCtrl   = require('./controllers/CharacterCtrl');
 
-app.post('/api/auth', passport.authenticate('local', {
-    successRedirect : '/',
-    failureRedirect : '/login'
+app.post('/api/auth', passport.authenticate('local-signup', {
+    successRedirect : '/registerSuccess',
+    failureRedirect : '/registerFailure'
 }));
 
-//CRUD 
+//Routes 
+app.get('/registerSuccess', function(req, res) {
+    req.user.password = '';
+    res.send(req.user);
+})
+app.get('/registerFailure', function(req, res) {
+    res.status(500).send('Failure to authenticate user');
+})
 
-app.get   ('/api/charSheet/stats',      StatsSheetCtrl.read);
-app.post  ('/api/charSheet/stats',      StatsSheetCtrl.create);
-app.put   ('/api/charSheet/stats/:id',  StatsSheetCtrl.update);
-app.delete('/api/charSheet/stats/:id',  StatsSheetCtrl.delete);
+app.get   ('/api/character/stats',      StatsSheetCtrl.read);
+app.post  ('/api/character/stats',      StatsSheetCtrl.create);
+app.put   ('/api/character/stats/:id',  StatsSheetCtrl.update);
+app.delete('/api/character/stats/:id',  StatsSheetCtrl.delete);
 
-app.get   ('/api/charSheet/misc',       MiscSheetCtrl.read);
-app.post  ('/api/charSheet/misc',       MiscSheetCtrl.create);
-app.put   ('/api/charSheet/misc/:id',   MiscSheetCtrl.update);
-app.delete('/api/charSheet/misc/:id',   MiscSheetCtrl.delete);
+app.get   ('/api/character/misc',       MiscSheetCtrl.read);
+app.post  ('/api/character/misc',       MiscSheetCtrl.create);
+app.put   ('/api/character/misc/:id',   MiscSheetCtrl.update);
+app.delete('/api/character/misc/:id',   MiscSheetCtrl.delete);
 
-app.get   ('/api/charSheet/spells',     SpellsSheetCtrl.read);
-app.post  ('/api/charSheet/spells',     SpellsSheetCtrl.create);
-app.put   ('/api/charSheet/spells/:id', SpellsSheetCtrl.update);
-app.delete('/api/charSheet/spells/:id', SpellsSheetCtrl.delete);
+app.get   ('/api/character/spells',     SpellsSheetCtrl.read);
+app.post  ('/api/character/spells',     SpellsSheetCtrl.create);
+app.put   ('/api/character/spells/:id', SpellsSheetCtrl.update);
+app.delete('/api/character/spells/:id', SpellsSheetCtrl.delete);
+
+app.get   ('/api/character',            CharacterCtrl.read);
+app.post  ('/api/character',            CharacterCtrl.create);
+app.put   ('/api/character/:id',        CharacterCtrl.update);
+app.delete('/api/character/:id',        CharacterCtrl.delete);
 
 app.get   ('/api/user',                 UserCtrl.read);
 app.post  ('/api/user',                 UserCtrl.create);

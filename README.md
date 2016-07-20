@@ -5,3 +5,4 @@ Product enhancment Ideas:
 2: Auto calculate values - Auto-Calculates values for calculated values
 3: Custom MiscSheet - Move columens around, create new ones, rename/name boxes
 4: More login options = Google and facebook
+5: More than 3 characters
