@@ -10,6 +10,16 @@ module.exports = {
         });
     },
 
+    createCharacter: function(req,res) {
+        User.findByIdAndUpdate(req.params.userId,
+        {$push: {characters: req.body.charId}})
+        .exec(function(err, result) {
+            if(err) return res.status(500).send(err);
+            console.log(result);
+            res.send(result);
+        });     
+    },
+
     read: function(req, res) {
         User.find(req.query)
         .populate('characters')
@@ -20,7 +30,7 @@ module.exports = {
     },
 
     update: function(req, res) {
-        User.findByIdAndUpdate(req.params.id, req.body,
+        User.findByIdAndUpdate(req.user.id, req.body,
         function(err, result) {
             if(err) return res.status(500).send(err);
             res.send(result);

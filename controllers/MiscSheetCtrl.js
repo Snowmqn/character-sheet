@@ -2,11 +2,13 @@ var Misc = require('../models/Misc');
 
 module.exports = {
     
-    create: function(req, res) {
+    create: function(req, res, next) {
         var newMisc = new Misc(req.body);
         newMisc.save(function(err, result) {
             if(err) return res.status(500).send(err);
-            res.send(result);
+            req.body.miscId = result._id;
+            console.log("before Next:", req.body);
+            next();
         });
     },
 

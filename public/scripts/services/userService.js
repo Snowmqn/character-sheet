@@ -18,7 +18,7 @@ function($http, $q) {
         return {
             username: obj.username,
             id: obj._id,
-            characters = obj.characters
+            characters: obj.characters
         };
     };
 });

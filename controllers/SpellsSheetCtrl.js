@@ -2,11 +2,14 @@ var SpellList= require('../models/SpellList');
 
 module.exports = {
     
-    create: function(req, res) {
+    create: function(req, res, next) {
         var newSpellList = new SpellList(req.body);
         newSpellList.save(function(err, result) {
             if(err) return res.status(500).send(err);
-            res.send(result);
+            req.body.spellId = result._id;
+                        console.log("before Next:", req.body);
+
+            next();
         });
     },
 

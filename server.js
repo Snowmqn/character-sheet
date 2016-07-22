@@ -74,8 +74,14 @@ app.delete('/api/character/:id',        CharacterCtrl.delete);
 
 app.get   ('/api/user',                 UserCtrl.read);
 app.post  ('/api/user',                 UserCtrl.create);
-app.put   ('/api/user/:id',             UserCtrl.update);
+app.put   ('/api/user/',                UserCtrl.update);
 app.delete('/api/user/:id',             UserCtrl.delete);
+
+app.post  ('/api/user/character/:userId', MiscSheetCtrl.create, 
+                                      SpellsSheetCtrl.create, 
+                                      StatsSheetCtrl.create,
+                                      CharacterCtrl.create,
+                                      UserCtrl.createCharacter);
 
 //Connection Information
 var port = 8000;

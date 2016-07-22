@@ -2,11 +2,19 @@ var Character = require('../models/Character');
 
 module.exports = {
     
-    create: function(req, res) {
-        var newCharacter = new Character(req.body);
+    create: function(req, res, next) {
+        var charObj = {
+            stats: req.body.statsId,
+            spell: req.body.spellId,
+            misc:  req.body.miscId
+        }
+        var newCharacter = new Character(charObj);
         newCharacter.save(function(err, result) {
             if(err) return res.status(500).send(err);
-            res.send(result);
+            req.body.charId = result._id;
+                        console.log("before Next:", req.body);
+
+            next();
         });
     },
 
