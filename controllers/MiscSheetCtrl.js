@@ -7,7 +7,6 @@ module.exports = {
         newMisc.save(function(err, result) {
             if(err) return res.status(500).send(err);
             req.body.miscId = result._id;
-            console.log("before Next:", req.body);
             next();
         });
     },

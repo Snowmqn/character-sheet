@@ -1,0 +1,25 @@
+<span>Username: </span> {{user.username}}
+<br>
+<br>
+<br>
+<br>
+<div ng-repeat="character in user.characters">
+    Name: {{character.name}}
+    <br>
+    Level: {{character.level}}
+    <br>
+    <button ng-click="someFunc(character._id)">Go to Character</button>
+    <br>
+    <hr>
+    <br>
+
+</div>
+
+<br>
+<hr>
+<hr>
+<br>
+
+<input type="text" placeholder="Name" ng-model="newName">
+<input type="text" placeholder="Level" ng-model="newLevel">
+<button ng-click="someFunc2(newName, newLevel)">New Character</button>

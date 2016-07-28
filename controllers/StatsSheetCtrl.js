@@ -7,8 +7,6 @@ module.exports = {
         newStats.save(function(err, result) {
             if(err) return res.status(500).send(err);
             req.body.statsId = result._id;
-                        console.log("before Next:", req.body);
-
             next();
         });
     },

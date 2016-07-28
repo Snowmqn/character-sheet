@@ -7,8 +7,6 @@ module.exports = {
         newSpellList.save(function(err, result) {
             if(err) return res.status(500).send(err);
             req.body.spellId = result._id;
-                        console.log("before Next:", req.body);
-
             next();
         });
     },

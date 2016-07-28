@@ -3,7 +3,6 @@ var express      = require('express'),
     bodyParser   = require('body-parser'),
     mongoose     = require('mongoose'),
     morgan       = require('morgan'),
-    cookieParser = require('cookie-parser'),
     session      = require('express-session'),
     passport     = require('passport'),
     app          = express();
@@ -26,7 +25,6 @@ app.use(passport.session());
 
 app.use(morgan('dev'));
 app.use(express.static('public'));
-app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(cors());
@@ -39,15 +37,11 @@ var UserCtrl        = require('./controllers/UserCtrl');
 var CharacterCtrl   = require('./controllers/CharacterCtrl');
 
 app.post('/api/auth', passport.authenticate('local-signup', {
-    successRedirect : '/registerSuccess',
+    successRedirect : '/api/user',
     failureRedirect : '/registerFailure'
 }));
 
 //Routes 
-app.get('/registerSuccess', function(req, res) {
-    req.user.password = '';
-    res.send(req.user);
-})
 app.get('/registerFailure', function(req, res) {
     res.status(500).send('Failure to authenticate user');
 })
@@ -72,10 +66,11 @@ app.post  ('/api/character',            CharacterCtrl.create);
 app.put   ('/api/character/:id',        CharacterCtrl.update);
 app.delete('/api/character/:id',        CharacterCtrl.delete);
 
-app.get   ('/api/user',                 UserCtrl.read);
+app.get   ('/api/user/all',             UserCtrl.read);
 app.post  ('/api/user',                 UserCtrl.create);
 app.put   ('/api/user/',                UserCtrl.update);
 app.delete('/api/user/:id',             UserCtrl.delete);
+app.get   ('/api/user',                 UserCtrl.getUser);
 
 app.post  ('/api/user/character/:userId', MiscSheetCtrl.create, 
                                       SpellsSheetCtrl.create, 
@@ -83,8 +78,13 @@ app.post  ('/api/user/character/:userId', MiscSheetCtrl.create,
                                       CharacterCtrl.create,
                                       UserCtrl.createCharacter);
 
+app.get ('/api/test', function(req,res) {
+    console.log('req.user: ', req.user);
+    res.send(req.user);
+})
+
 //Connection Information
-var port = 8000;
+var port = 8080;
 if(debug) var mongoUri = 'mongodb://localhost:27017/character-sheet-test';
 else var mongoUri = 'mongodb://localhost:27017/character-sheet';
 

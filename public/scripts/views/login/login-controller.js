@@ -1,5 +1,5 @@
 angular.module('CSApp').controller('login-controller',
-function($scope, userService) {
+function($scope, userService, $state) {
 
     $scope.submitNewUser = function(username, password, cPassword) {
         if(cPassword !== password) return alert("Password's don't match!!!!");
@@ -8,6 +8,7 @@ function($scope, userService) {
         userService.createUser(username, password)
         .then(function(result) {
             $scope.user = result;
-        })
+            $state.go('settings');
+        });
     };
 });

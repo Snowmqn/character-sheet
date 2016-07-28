@@ -15,7 +15,6 @@ module.exports = {
         {$push: {characters: req.body.charId}})
         .exec(function(err, result) {
             if(err) return res.status(500).send(err);
-            console.log(result);
             res.send(result);
         });     
     },
@@ -25,6 +24,17 @@ module.exports = {
         .populate('characters')
         .exec(function(err, result) {
             if(err) return res.status(500).send(err);
+            res.send(result);
+        });
+    },
+
+    getUser: function(req, res) {
+        User.findById(req.user._id)
+        .populate('characters')
+        .exec(function(err, result) {
+            if(err) return res.status(500).send(err);
+            result.password = '';
+            req.user = result;
             res.send(result);
         });
     },

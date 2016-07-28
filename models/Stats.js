@@ -80,8 +80,27 @@ var statsSchema = Schema({
     hitDiceTotal: Number,
     hitDiceRemaining: Number,
     deathSaveSuccess: [Boolean,Boolean,Boolean],
-    deathSaveFail: [Boolean,Boolean,Boolean]
-    
+    deathSaveFail: [Boolean,Boolean,Boolean],
+    personality: String,
+    ideals: String,
+    bonds: String,
+    flaws: String,
+    passivePerception: Number,
+    featuresTraits: String,
+    prficiencyLanguage: String,
+    CP: Number,
+    SP: Number,
+    GP: Number,
+    EP: Number,
+    PP: Number,
+    equipment: String,
+    weapons: [{
+        name: String,
+        attackBonus: Number,
+        damage: String,
+        damageType: String,
+        other: String,
+    }]
 });
 
 module.exports = mongoose.model('Stats', statsSchema);

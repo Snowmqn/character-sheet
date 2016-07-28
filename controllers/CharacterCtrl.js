@@ -12,8 +12,6 @@ module.exports = {
         newCharacter.save(function(err, result) {
             if(err) return res.status(500).send(err);
             req.body.charId = result._id;
-                        console.log("before Next:", req.body);
-
             next();
         });
     },

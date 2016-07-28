@@ -2,23 +2,24 @@
 <html lang="en" ng-app="CSApp">
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js "></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./styles/styles.css">
     <title>Character Sheet</title>
 </head>
-<body ng-controller="login-controller">
-    <input type="text" placeholder="Username" ng-model="username">
-    <input type="text" placeholder="Password" ng-model="password">
-    <input type="text" placeholder="Confirm Password" ng-model="passwordConfirm">
-    <button ng-click="submitNewUser(username, password, passwordConfirm)">Submit!</button>
+<body>
 
-    Logged in username: {{user.username}}
+    <div class="view-container">
+        <div ui-view></div>
+    </div>
     
-    
-
-
     <script src="./scripts/app.js"></script>
-    <script src="./scripts/controllers/login-controller.js"></script>
-    <script src="./scripts/services/userService.js"></script>
+    <script src="./scripts/userService.js"></script>
+    <script src="./scripts/views/login/login-controller.js"></script>
+    <script src="./scripts/views/misc/misc-controller.js"></script>
+    <script src="./scripts/views/settings/settings-controller.js"></script>
+    
 </body>
 </html>
