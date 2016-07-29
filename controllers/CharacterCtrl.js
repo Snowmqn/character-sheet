@@ -6,7 +6,9 @@ module.exports = {
         var charObj = {
             stats: req.body.statsId,
             spell: req.body.spellId,
-            misc:  req.body.miscId
+            misc:  req.body.miscId,
+            name:  req.body.name,
+            level: req.body.level
         }
         var newCharacter = new Character(charObj);
         newCharacter.save(function(err, result) {
@@ -24,8 +26,16 @@ module.exports = {
         });
     },
 
+    getCharacter: function(req, res) {
+        Character.findById(req.params.id)
+        .populate('stats misc spells')
+        .exec(function(err, result) {
+            if(err) return res.status(500).send(err);
+            res.send(result);
+        });
+    },
+
     update: function(req, res) {
-        console.log("Reached this point");
         Character.findByIdAndUpdate(req.params.id, req.body,
         function(err, result) {
             if(err) return res.status(500).send(err);
@@ -34,11 +44,11 @@ module.exports = {
         
     },
 
-    delete: function(req, res) {
+    delete: function(req, res, next) {
         Character.findByIdAndRemove(req.params.id,
         function(err, result) {
             if(err) return res.status(500).send(err);
-            res.send(result);
+            next();
         });
     }
 };

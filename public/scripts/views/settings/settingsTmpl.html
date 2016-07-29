@@ -8,18 +8,18 @@
     <br>
     Level: {{character.level}}
     <br>
-    <button ng-click="someFunc(character._id)">Go to Character</button>
+    <button ng-click="goToCharacter(character._id)">Go to Character</button>
+    <button ng-click="deleteCharacter(character._id)">Delete</button>
     <br>
     <hr>
     <br>
 
 </div>
 
-<br>
 <hr>
 <hr>
 <br>
 
 <input type="text" placeholder="Name" ng-model="newName">
 <input type="text" placeholder="Level" ng-model="newLevel">
-<button ng-click="someFunc2(newName, newLevel)">New Character</button>
+<button ng-click="createCharacter(newName, newLevel)">New Character</button>

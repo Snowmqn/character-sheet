@@ -61,10 +61,12 @@ app.post  ('/api/character/spells',     SpellsSheetCtrl.create);
 app.put   ('/api/character/spells/:id', SpellsSheetCtrl.update);
 app.delete('/api/character/spells/:id', SpellsSheetCtrl.delete);
 
-app.get   ('/api/character',            CharacterCtrl.read);
+app.get   ('/api/character/all',        CharacterCtrl.read);
+app.get   ('/api/character/:id',        CharacterCtrl.getCharacter);
 app.post  ('/api/character',            CharacterCtrl.create);
 app.put   ('/api/character/:id',        CharacterCtrl.update);
-app.delete('/api/character/:id',        CharacterCtrl.delete);
+app.delete('/api/character/:id',        CharacterCtrl.delete,
+                                        UserCtrl.getUser);
 
 app.get   ('/api/user/all',             UserCtrl.read);
 app.post  ('/api/user',                 UserCtrl.create);
@@ -72,14 +74,14 @@ app.put   ('/api/user/',                UserCtrl.update);
 app.delete('/api/user/:id',             UserCtrl.delete);
 app.get   ('/api/user',                 UserCtrl.getUser);
 
-app.post  ('/api/user/character/:userId', MiscSheetCtrl.create, 
-                                      SpellsSheetCtrl.create, 
-                                      StatsSheetCtrl.create,
-                                      CharacterCtrl.create,
-                                      UserCtrl.createCharacter);
+app.post  ('/api/user/character',       MiscSheetCtrl.create, 
+                                        SpellsSheetCtrl.create, 
+                                        StatsSheetCtrl.create,
+                                        CharacterCtrl.create,
+                                        UserCtrl.createCharacter,
+                                        UserCtrl.getUser);
 
 app.get ('/api/test', function(req,res) {
-    console.log('req.user: ', req.user);
     res.send(req.user);
 })
 

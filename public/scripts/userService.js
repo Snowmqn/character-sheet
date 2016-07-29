@@ -5,7 +5,7 @@ function($http, $q, $state) {
 
     this.createUser = function(username, password){
         var defer = $q.defer();
-        var userObj = {username: username, password:password};
+        var userObj = {username: username, password: password};
         $http.post('/api/auth', userObj)
         .then(function(result){
             var data = result.data;
@@ -24,6 +24,29 @@ function($http, $q, $state) {
             defer.resolve(data);
         }, function(err) {
             $state.go('login');
+        });
+        return defer.promise;
+    };
+
+    this.createCharacter = function(name, level) {
+        var defer = $q.defer();
+        var charObj = {name: name, level: level};
+        $http.post('/api/user/character/', charObj)
+        .then(function(result) {
+            var data = result.data;
+            user = data;
+            defer.resolve(data);
+        });
+        return defer.promise;
+    };
+
+    this.deleteCharacter = function(id) {
+        var defer = $q.defer();
+        $http.delete('/api/character/' + id)
+        .then(function(result) {
+            var data = result.data;
+            user = data;
+            defer.resolve(data);
         });
         return defer.promise;
     };

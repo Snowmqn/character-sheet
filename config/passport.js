@@ -12,7 +12,6 @@ module.exports = function(passport) {
 
     // used to serialize the user for the session
     passport.serializeUser(function(user, done) {
-        console.log("USER: ", user);
         done(null, user._id);
     });
 
@@ -49,7 +48,6 @@ module.exports = function(passport) {
 
                     // check to see if theres already a user with that email
                     if (user) {
-                        console.log('User Check!!!!!!');
                         if (user.validPassword(password)) {
                             return done(null, user);
                         } else {
@@ -67,7 +65,6 @@ module.exports = function(passport) {
                         // save the user
                         newUser.save(function(err) {
                             if (err) throw err;
-                            console.log(newUser);
                             return done(null, newUser);
                         });
                     }

@@ -10,12 +10,12 @@ module.exports = {
         });
     },
 
-    createCharacter: function(req,res) {
-        User.findByIdAndUpdate(req.params.userId,
+    createCharacter: function(req,res,next) {
+        User.findByIdAndUpdate(req.user._id,
         {$push: {characters: req.body.charId}})
         .exec(function(err, result) {
             if(err) return res.status(500).send(err);
-            res.send(result);
+            next();
         });     
     },
 

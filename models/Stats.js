@@ -2,9 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var statsSchema = Schema({
-    name: String,
     class: String,
-    level: String,
     background: String,
     race: String,
     alignment: String,

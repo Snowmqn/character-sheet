@@ -12,17 +12,17 @@ angular.module('CSApp', ['ui.router']).config(function ($stateProvider, $urlRout
             controller: 'settings-controller'
         })
         .state('stats', {
-            url: '/stats/:id',
+            url: '/stats',
             templateUrl: './scripts/views/stats/statsTmpl.html',
             controller: 'stats-controller'
         })
         .state('misc', {
-            url: '/misc/:id',
+            url: '/misc',
             templateUrl: './scripts/views/misc/miscTmpl.html',
             controller: 'misc-controller'
         })
         .state('spells', {
-            url: '/spells/:id',
+            url: '/spells',
             templateUrl: './scripts/views/spells/spellsTmpl.html',
             controller: 'spells-controller'
         });
