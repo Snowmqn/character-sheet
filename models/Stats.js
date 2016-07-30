@@ -72,7 +72,7 @@ var statsSchema = Schema({
     armorClass: Number,
     initative: Number,
     speed: Number,
-    hitPointMac: Number,
+    hitPointMax: Number,
     currentHitPoints: Number,
     temporaryHitPoints: Number,
     hitDiceTotal: Number,

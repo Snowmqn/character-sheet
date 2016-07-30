@@ -1,7 +1,100 @@
 <button ng-click="updateCharacter()">Update</button>
 <button ng-click="goToSettings()">Settings</button>
-<br>
+<section class="block generalInfo">
+    <input-directive data="character.name"></input-directive>
+    <number-directive data="character.level"></number-directive>
+    <input-directive data="character.stats.race"></input-directive>
+    <input-directive data="character.stats.alignment"></input-directive>
+    <input-directive data="character.stats.experience"></number-directive>
+    <number-directive data="character.stats.background"></input-directive>
+    <input-directive data="character.stats.class"></input-directive>
+</section>
 <hr>
-<input type="text" placeholder="{{character.name}}" ng-model="character.name">
+<section class="block attributes">
+    <number-directive data="character.stats.strength"></number-directive>   
+    <number-directive data="character.stats.strengthMod"></number-directive>   
+    <number-directive data="character.stats.dexterity"></number-directive>   
+    <number-directive data="character.stats.dexterityMod"></number-directive>   
+    <number-directive data="character.stats.constitution"></number-directive>   
+    <number-directive data="character.stats.constitutionMod"></number-directive>   
+    <number-directive data="character.stats.intelligence"></number-directive>   
+    <number-directive data="character.stats.intelligenceMod"></number-directive>   
+    <number-directive data="character.stats.wisdom"></number-directive>
+    <number-directive data="character.stats.wisdomMod"></number-directive>   
+    <number-directive data="character.stats.charisma"></number-directive>   
+    <number-directive data="character.stats.charismaMod"></number-directive>
+</section>
 <hr>
-<input type="text" placeholder="{{character.stats.class}}" ng-model="character.stats.class">
+<section class="block inspAndProf">
+    <check-directive data="character.stats.inspiration"></check-directive>
+    <input-directive data="character.stats.proficiency"></input-directive>
+</section>
+<hr>
+<section class="block savingThrows">
+    <number-directive data="character.stats.strSave"></number-directive>
+    <check-directive data="character.stats.strSaveProf"></check-directive>    <number-directive data="character.stats.dexSave"></number-directive>
+    <check-directive data="character.stats.dexSaveProf"></check-directive>
+    <number-directive data="character.stats.conSave"></number-directive>
+    <check-directive data="character.stats.conSaveProf"></check-directive>
+    <number-directive data="character.stats.intSave"></number-directive>
+    <check-directive data="character.stats.intSaveProf"></check-directive>
+    <number-directive data="character.stats.wisSave"></number-directive>
+    <check-directive data="character.stats.wisSaveProf"></check-directive>
+    <number-directive data="character.stats.chaSave"></number-directive>
+    <check-directive data="character.stats.chaSaveProf"></check-directive>
+</section>
+<hr>
+<section class="block skills">
+    <number-directive data="character.stats.acrobatics"></number-directive>
+    <check-directive data="character.stats.acrobaticsProf"></check-directive>    <number-directive data="character.stats.animalHandling"></number-directive>
+    <check-directive data="character.stats.animalHandlingProf"></check-directive>
+    <number-directive data="character.stats.arcana"></number-directive>
+    <check-directive data="character.stats.arcanaProf"></check-directive>
+    <number-directive data="character.stats.athletics"></number-directive>
+    <check-directive data="character.stats.athleticsProf"></check-directive>
+    <number-directive data="character.stats.deception"></number-directive>
+    <check-directive data="character.stats.deceptionProf"></check-directive>
+    <number-directive data="character.stats.history"></number-directive>
+    <check-directive data="character.stats.historyProf"></check-directive>
+    <number-directive data="character.stats.insight"></number-directive>
+    <check-directive data="character.stats.insightProf"></check-directive>
+    <number-directive data="character.stats.intimidation"></number-directive>
+    <check-directive data="character.stats.intimidationProf"></check-directive>
+    <number-directive data="character.stats.investigation"></number-directive>
+    <check-directive data="character.stats.investigationProf"></check-directive>
+    <number-directive data="character.stats.medicine"></number-directive>
+    <check-directive data="character.stats.medicineProf"></check-directive>
+    <number-directive data="character.stats.nature"></number-directive>
+    <check-directive data="character.stats.natureProf"></check-directive>
+    <number-directive data="character.stats.perception"></number-directive>
+    <check-directive data="character.stats.perceptionProf"></check-directive>
+    <number-directive data="character.stats.performance"></number-directive>
+    <check-directive data="character.stats.performanceProf"></check-directive>
+    <number-directive data="character.stats.persuasion"></number-directive>
+    <check-directive data="character.stats.persuasionProf"></check-directive>
+    <number-directive data="character.stats.religion"></number-directive>
+    <check-directive data="character.stats.religionProf"></check-directive>
+    <number-directive data="character.stats.slieghtOfHand"></number-directive>
+    <check-directive data="character.stats.slieghtOfHandProf"></check-directive>
+    <number-directive data="character.stats.stealth"></number-directive>
+    <check-directive data="character.stats.stealthProf"></check-directive>
+    <number-directive data="character.stats.survival"></number-directive>
+    <check-directive data="character.stats.survivalProf"></check-directive>
+</section>
+<hr>
+<section>
+    <number-directive data="character.stats.armorClass"></number-directive>
+    <number-directive data="character.stats.initative"></number-directive>
+    <number-directive data="character.stats.speed"></number-directive>
+    <number-directive data="character.stats.hitPointMax"></number-directive>
+    <number-directive data="character.stats.currentHitPoints"></number-directive>
+    <number-directive data="character.stats.temporaryHitPoints"></number-directive>
+    <number-directive data="character.stats.hitDiceTotal"></number-directive>
+    <number-directive data="character.stats.hitDiceRemaining"></number-directive>
+    <check-directive data="character.stats.deathSaveSuccess[0]"></check-directive>
+    <check-directive data="character.stats.deathSaveSuccess[1]"></check-directive>
+    <check-directive data="character.stats.deathSaveSuccess[2]"></check-directive>
+    <check-directive data="character.stats.deathSaveFail[0]"></check-directive>
+    <check-directive data="character.stats.deathSaveFail[1]"></check-directive>
+    <check-directive data="character.stats.deathSaveFail[2]"></check-directive>
+</section>

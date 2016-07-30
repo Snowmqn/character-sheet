@@ -18,5 +18,4 @@ function($scope, $state, characterService) {
             alert('Successfully Updated');
         });
     };
-
 });
