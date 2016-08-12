@@ -1,25 +1,24 @@
-<span>Username: </span> {{user.username}}
-<br>
-<br>
-<br>
-<br>
-<div ng-repeat="character in user.characters">
-    Name: {{character.name}}
-    <br>
-    Level: {{character.level}}
-    <br>
-    <button class="btn btn-default" ng-click="goToCharacter(character._id)">Go to Character</button>
-    <button class="btn btn-default" ng-click="deleteCharacter(character._id)">Delete</button>
-    <br>
-    <hr>
-    <br>
+<section class=".loginSection">
+    <div class="loginContainer">
+        <div class="loginDiv">
+            <span class="settingsCharacterSpan">Username: {{user.username}}</span>
+            <hr>
+            <input class="form-control" type="text" placeholder="Name" ng-model="newName">
+            <input class="form-control" type="text" placeholder="Level" ng-model="newLevel">
+            <button class="btn btn-default" ng-click="createCharacter(newName, newLevel)">New Character</button>
+        </div>
+    </div>
 
-</div>
 
-<hr>
-<hr>
-<br>
-
-<input class="form-control" type="text" placeholder="Name" ng-model="newName">
-<input class="form-control" type="text" placeholder="Level" ng-model="newLevel">
-<button class="btn btn-default" ng-click="createCharacter(newName, newLevel)">New Character</button>
+    <div class="loginContainer">
+        <div class="settingsCharacterContainer">
+            <div class="settingsCharacter" ng-repeat="character in user.characters">
+                <span class="settingsCharacterSpan">{{character.name}}  |  {{character.level}}</span>
+                <br>
+                <button class="btn btn-default" ng-click="goToCharacter(character._id)">Go to Character</button>
+                <button class="btn btn-default" ng-click="deleteCharacter(character._id)">Delete</button>
+                <hr>
+            </div>
+        </div
+    </div>
+</section>

@@ -32,6 +32,26 @@ body {
     width: 100%;
 }
 
+.settingsCharacterContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow: scroll;
+    max-width: 350px;
+    width: 80%;
+    min-width: 200px;
+    height: 100vh;
+    margin: 0px auto; 
+}
+
+.settingsCharacter {
+    
+}
+
+.settingsCharacterSpan {
+    font-size: 2em;
+}
+
 @media (min-width: 860px) {
     .loginSection {
         width: 80%;
