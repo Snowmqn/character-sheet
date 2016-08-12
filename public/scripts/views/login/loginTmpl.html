@@ -1,17 +1,22 @@
-<div>
-    <input type="text" placeholder="Username" ng-model="username">
-    <input type="text" placeholder="Password" ng-model="password">
-    <input type="text" placeholder="Confirm Password" ng-model="passwordConfirm">
-    <button ng-click="submitNewUser(username, password, passwordConfirm)">Submit!</button>
-</div>
-<br>
-<br>
-<br>
-<div>
-    <input type="text" placeholder="Username" ng-model="userCheck">
-    <input type="text" placeholder="Password" ng-model="passCheck">
-    <button ng-click="submitNewUser(userCheck, passCheck, passCheck)">Submit!</button>
-</div>
-<br>
-<hr>
-<button ng-click="submitNewUser('Snowmqn', 'qwertyuiop', 'qwertyuiop')">Short Login</button>
+<section class="loginSection">
+    <div class="loginContainer">
+        <div class="loginDiv loginDiv">
+            <input class="form-control loginInput" type="text" placeholder="Username" ng-model="username">
+            <input class="form-control loginInput" type="text" placeholder="Password" ng-model="password">
+            <input class="form-control loginInput" type="text" placeholder="Confirm Password" ng-model="passwordConfirm">
+            <button class="loginButton btn btn-default" ng-click="submitNewUser(username, password, passwordConfirm)">Submit!</button>
+        </div>
+    </div>
+
+    <div class="loginContainer">
+        <div class="loginDiv loginExistingUser">
+            <input class="form-control loginInput" type="text" placeholder="Username" ng-model="userCheck">
+            <br>
+            <input class="form-control loginInput" type="text" placeholder="Password" ng-model="passCheck">
+            <button class="loginButton btn btn-default" ng-click="submitNewUser(userCheck, passCheck, passCheck)">Submit!</button>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <button class="btn btn-default" ng-click="submitNewUser('Snowmqn', 'qwertyuiop', 'qwertyuiop')">Short Login</button>
+</section>

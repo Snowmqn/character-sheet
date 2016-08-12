@@ -28,6 +28,22 @@ module.exports = {
         
     },
 
+    // addWeapon = function(req, res) {
+    //     var blankWeapon = {
+    //         name: 'name',
+    //         attackBonus: -1,
+    //         damage: '0d8',
+    //         damageType: 'none',
+    //         other: 'blank',
+    //     };
+    //     Stats.findByIdAndUpdate(req.params._id,
+    //     {$push: {weapons: blankWeapon}})
+    //     .exec(function(err, result) {
+    //         if(err) return res.status(500).send(err);
+    //         res.send(blankWeapon);
+    //     });
+    // },
+
     delete: function(req, res) {
         Stats.findByIdAndRemove(req.params.id,
         function(err, result) {

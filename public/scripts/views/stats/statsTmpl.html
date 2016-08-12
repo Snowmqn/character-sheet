@@ -1,5 +1,5 @@
-<button ng-click="updateCharacter()">Update</button>
-<button ng-click="goToSettings()">Settings</button>
+<button class="btn btn-default" ng-click="updateCharacter()">Update</button>
+<button class="btn btn-default" ng-click="goToSettings()">Settings</button>
 <section class="block generalInfo">
     <input-directive data="character.name"></input-directive>
     <number-directive data="character.level"></number-directive>
@@ -32,7 +32,8 @@
 <hr>
 <section class="block savingThrows">
     <number-directive data="character.stats.strSave"></number-directive>
-    <check-directive data="character.stats.strSaveProf"></check-directive>    <number-directive data="character.stats.dexSave"></number-directive>
+    <check-directive data="character.stats.strSaveProf"></check-directive>    
+    <number-directive data="character.stats.dexSave"></number-directive>
     <check-directive data="character.stats.dexSaveProf"></check-directive>
     <number-directive data="character.stats.conSave"></number-directive>
     <check-directive data="character.stats.conSaveProf"></check-directive>
@@ -46,7 +47,8 @@
 <hr>
 <section class="block skills">
     <number-directive data="character.stats.acrobatics"></number-directive>
-    <check-directive data="character.stats.acrobaticsProf"></check-directive>    <number-directive data="character.stats.animalHandling"></number-directive>
+    <check-directive data="character.stats.acrobaticsProf"></check-directive>    
+    <number-directive data="character.stats.animalHandling"></number-directive>
     <check-directive data="character.stats.animalHandlingProf"></check-directive>
     <number-directive data="character.stats.arcana"></number-directive>
     <check-directive data="character.stats.arcanaProf"></check-directive>
@@ -97,4 +99,52 @@
     <check-directive data="character.stats.deathSaveFail[0]"></check-directive>
     <check-directive data="character.stats.deathSaveFail[1]"></check-directive>
     <check-directive data="character.stats.deathSaveFail[2]"></check-directive>
+</section>
+<hr>
+<section>
+    <input-directive data="character.stats.personality"></input-directive>
+    <input-directive data="character.stats.ideals"></input-directive>
+    <input-directive data="character.stats.bonds"></input-directive>
+    <input-directive data="character.stats.flaws"></input-directive>
+</section>
+<hr>
+<section>
+    <number-directive data="character.stats.passivePerception"></number-directive>
+</section>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<section>
+    <input-directive data="character.stats.featuresTraits"></input-directive>
+</section>
+<hr>
+<section>
+    <input-directive data="character.stats.prficiencyLanguage"></input-directive>
+</section>
+<hr>
+<section>
+    <number-directive data="character.stats.CP"></number-directive>
+    <number-directive data="character.stats.SP"></number-directive>
+    <number-directive data="character.stats.GP"></number-directive>
+    <number-directive data="character.stats.EP"></number-directive>
+    <number-directive data="character.stats.PP"></number-directive>    
+    <input-directive data="character.stats.equipment"></input-directive>
+</section>
+<hr>
+Weapons!
+<section>
+    <button class="btn btn-default" ng-click="addWeapon()">Add Weapon</button>
+    <div ng-repeat="weapon in character.stats.weapons">
+        <input-directive  data="weapon.name"></input-directive>
+        <number-directive data="weapon.attackBonus"></number-directive>
+        <input-directive  data="weapon.damage"></input-directive>
+        <input-directive  data="weapon.damageType"></input-directive>
+        <input-directive  data="weapon.other"></input-directive>
+    </div>
 </section>

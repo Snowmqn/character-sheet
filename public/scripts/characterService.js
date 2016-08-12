@@ -29,5 +29,12 @@ function($http, $q, $state) {
         return defer.promise;
     };
 
-    
+    // this.addWeapon = function() {
+    //     var defer = $q.defer();
+    //     $http.put('/api/character/stats/weapons' + character.stats._id,)
+    //     .then(function(result) {
+    //         defer.resolve(result.data);
+    //     });
+    //     return defer.promise;
+    // };
 });

@@ -18,4 +18,9 @@ function($scope, $state, characterService) {
             alert('Successfully Updated');
         });
     };
+
+    $scope.addWeapon = function() {
+        $scope.character.stats.weapons.push({});
+        console.log($scope.character);
+    };
 });

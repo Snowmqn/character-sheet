@@ -1,0 +1,41 @@
+body {
+    background: #eee;
+}
+
+/*Login Styles***********************************************/
+.loginSection {
+    height: 100vh;
+    width: 100%;
+    background: #eee;
+
+}
+
+.loginContainer {
+    width: 50%;
+    height: 100vh;
+    margin: 0;
+    float: left;
+}
+
+.loginDiv {
+    max-width: 350px;
+    width: 80%;
+    min-width: 200px;
+    margin: 30vh auto;
+}
+
+.loginInput {
+    margin: 20px 0;
+}
+
+.loginButton {
+    width: 100%;
+}
+
+@media (min-width: 860px) {
+    .loginSection {
+        width: 80%;
+        min-width: 860px;
+        margin: 0 auto;
+    }
+}
