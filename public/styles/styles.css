@@ -52,6 +52,19 @@ body {
     font-size: 2em;
 }
 
+/*Stats styles************************************/
+.statsSection {
+    margin: 0 auto;
+    max-width: 938px;
+}
+
+.block {
+    width: 300px;
+    display: inline-block;
+    margin: 5px;
+    border: 1px solid black;
+}
+
 @media (min-width: 860px) {
     .loginSection {
         width: 80%;
