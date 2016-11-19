@@ -1,8 +1,11 @@
 # character-sheet
 
-Product enhancment Ideas:
-1: Character Verifier    - Lets the user know if all basic needed fields have been entered and saved
-2: Auto calculate values - Auto-Calculates values for calculated values
-3: Custom MiscSheet - Move columens around, create new ones, rename/name boxes
-4: More login options = Google and facebook
-5: Undelete characters that were deleteds
+Character Sheet is a full stack web application that acts like a Dungeon and Dragons 5e character sheet. 
+
+
+HTML, Javascript, CSS, Angular, Node, MongoDB, Bootstrap
+
+
+# Current State
+Currently only user creation, character creation, and the stats sheet portion of a character have been completed.
+This project has been abandoned. While it might be picked up in the future I have no intention of doing so currently. 
