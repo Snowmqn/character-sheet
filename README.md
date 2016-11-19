@@ -7,5 +7,5 @@ HTML, Javascript, CSS, Angular, Node, MongoDB, Bootstrap
 
 
 # Current State
-Currently only user creation, character creation, and the stats sheet portion of a character have been completed.
-This project has been abandoned. While it might be picked up in the future I have no intention of doing so currently. 
+- Currently only user creation, character creation, and the stats sheet portion of a character have been completed.
+- This project has been abandoned. While it might be picked up in the future I have no intention of doing so currently. 
